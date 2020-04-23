@@ -1,9 +1,11 @@
 package main
 
 import (
-	"HeadFirstGo/ch04/keyboard"
+	// "HeadFirstGo/ch04/keyboard"
 	"fmt"
 	"log"
+
+	"github.com/zettabytekim/HeadFirstGo/ch04/keyboard"
 )
 
 func main() {
