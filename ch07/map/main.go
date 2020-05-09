@@ -65,6 +65,16 @@ func main() {
 
 	fmt.Println()
 	mapDelete()
+
+	fmt.Println()
+	mapRange()
+}
+
+func mapRange() {
+	grades := map[string]float64{"Alma": 74.2, "Robit": 86.5, "Carl": 59.7}
+	for name, grade := range grades {
+		fmt.Printf("%s has a grade of %0.1f%%\n", name, grade)
+	}
 }
 
 func status(name string) {
