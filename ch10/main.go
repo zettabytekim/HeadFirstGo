@@ -1,35 +1,32 @@
 package main
 
-import "fmt"
-
-// Date struct
-type Date struct {
-	Year  int
-	Month int
-	Day   int
-}
-
-// SetYear Method
-func (d *Date) SetYear(year int) {
-	d.Year = year
-}
-
-// SetMonth Method
-func (d *Date) SetMonth(month int) {
-	d.Month = month
-}
-
-// SetDay Method
-func (d *Date) SetDay(day int) {
-	d.Day = day
-}
+import (
+	"HeadFirstGo/ch10/calendar"
+	"fmt"
+	"log"
+)
 
 func main() {
-	// date := Date{Year: 2020, Month: 5, Day: 16}
-	// fmt.Println(date)	date := Date{}
-	date := Date{}
-	date.SetYear(2020)
-	date.SetMonth(5)
-	date.SetDay(15)
+	date := calendar.Date{}
+	err := date.SetYear(2020)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	err = date.SetMonth(13)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	err = date.SetDay(31)
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	fmt.Println(date)
+	// date.year = 2019
+	// date.month = 14
+	// date.day = 33
+	// fmt.Println(date)
+
 }
