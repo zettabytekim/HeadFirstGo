@@ -18,6 +18,21 @@ func (d *Date) SetYear(year int) error {
 	return nil
 }
 
+// Year Method
+func (d *Date) Year() int {
+	return d.year
+}
+
+// Month Method
+func (d *Date) Month() int {
+	return d.month
+}
+
+// Day Method
+func (d *Date) Day() int {
+	return d.day
+}
+
 // SetMonth Method
 func (d *Date) SetMonth(month int) error {
 	if month < 1 || month > 12 {

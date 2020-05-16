@@ -13,7 +13,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	err = date.SetMonth(13)
+	err = date.SetMonth(12)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -24,9 +24,7 @@ func main() {
 	}
 
 	fmt.Println(date)
-	// date.year = 2019
-	// date.month = 14
-	// date.day = 33
-	// fmt.Println(date)
-
+	fmt.Println(date.Year())
+	fmt.Println(date.Month())
+	fmt.Println(date.Day())
 }
