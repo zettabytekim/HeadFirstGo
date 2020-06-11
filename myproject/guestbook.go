@@ -2,10 +2,7 @@ package main
 
 import (
 	"bufio"
-<<<<<<< HEAD
 	"fmt"
-=======
->>>>>>> 6e97779174744b8f0dfb2e2b5ae51a8916441aef
 	"html/template"
 	"log"
 	"net/http"
@@ -17,7 +14,6 @@ type Guestbook struct {
 	Signatures     []string
 }
 
-<<<<<<< HEAD
 func getStrings(fileName string) []string {
 	var lines []string
 	file, err := os.Open(fileName)
@@ -34,28 +30,10 @@ func getStrings(fileName string) []string {
 	return lines
 }
 
-=======
->>>>>>> 6e97779174744b8f0dfb2e2b5ae51a8916441aef
 func check(err error) {
 	if err != nil {
 		log.Fatal(err)
 	}
-}
-
-func getStrings(fileName string) []string {
-	var lines []string
-	file, err := os.Open(fileName)
-	if os.IsNotExist(err) {
-		return nil
-	}
-	check(err)
-	defer file.Close()
-	scanner := bufio.NewScanner(file)
-	for scanner.Scan() {
-		lines = append(lines, scanner.Text())
-	}
-	check(scanner.Err())
-	return lines
 }
 
 func viewHandler(writer http.ResponseWriter, request *http.Request) {
@@ -67,15 +45,12 @@ func viewHandler(writer http.ResponseWriter, request *http.Request) {
 		Signatures:     signatures,
 	}
 	err = html.Execute(writer, guestbook)
-<<<<<<< HEAD
 	check(err)
 }
 func newHandler(writer http.ResponseWriter, request *http.Request) {
 	html, err := template.ParseFiles("new.html")
 	check(err)
 	err = html.Execute(writer, nil)
-=======
->>>>>>> 6e97779174744b8f0dfb2e2b5ae51a8916441aef
 	check(err)
 }
 
@@ -88,6 +63,7 @@ func createHandler(writer http.ResponseWriter, request *http.Request) {
 	check(err)
 	err = file.Close()
 	check(err)
+	http.Redirect(writer, request, "/guestbook", http.StatusFound)
 }
 
 func main() {
