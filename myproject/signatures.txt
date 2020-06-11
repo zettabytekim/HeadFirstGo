@@ -1,2 +1,8 @@
+<<<<<<< HEAD
 hello monkey
 toto
+=======
+First signature
+Second signature
+Third signature
+>>>>>>> 6e97779174744b8f0dfb2e2b5ae51a8916441aef
